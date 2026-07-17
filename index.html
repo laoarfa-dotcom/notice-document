@@ -3,594 +3,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM EXPRESS - Sistem Pelacakan Paket Real-Time</title>
+    <title>PM STORE LUMAJANG - Pusat iPhone Murah Lumajang</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Leaflet.js CSS (Peta Gratis) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Leaflet.js JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        #map { height: 380px; z-index: 10; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+<body class="bg-slate-950 text-slate-100 min-h-screen">
 
-    <!-- Header Ala J&T Express (Tanpa Tombol Admin Publik) -->
-    <header class="bg-red-600 border-b-4 border-red-700 sticky top-0 z-30 shadow-xl">
-        <div class="max-w-5xl mx-auto px-4 py-3.5 flex justify-between items-center">
-            <!-- Logo dengan Fitur Rahasia 3x Klik untuk Buka Admin -->
-            <div onclick="handleLogoTripleClick()" class="flex items-center gap-3 cursor-pointer select-none" title="PM EXPRESS">
-                <div class="w-10 h-10 bg-white text-red-600 rounded-xl flex items-center justify-center font-black shadow-md">
-                    <i class="fa-solid fa-bolt text-2xl"></i>
-                </div>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <i class="fa-brands fa-apple text-3xl text-white"></i>
                 <div>
-                    <h1 class="font-extrabold text-lg sm:text-xl tracking-wider text-white italic leading-tight">PM EXPRESS</h1>
-                    <p class="text-[10px] text-red-100 font-medium">Pusat Sortir: PM STORE Pasar Senggol Lumajang</p>
+                    <h1 class="font-bold text-xl leading-tight tracking-wide text-white">PM STORE LUMAJANG</h1>
+                    <p class="text-xs text-slate-400">Pasar Senggol, Tompokersan, Kec. Lumajang, Jawa Timur</p>
                 </div>
             </div>
-
-            <!-- Tanda Online Cloud Status -->
-            <div class="flex items-center gap-2 bg-red-800/60 border border-red-500/40 text-white text-[10px] px-3 py-1.5 rounded-full font-bold">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Server Cloud Aktif</span>
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <!-- Tombol Lacak Paket -->
+                <a href="https://laoarfa-dotcom.github.io/tracking-paket/" target="_blank" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition shadow-md">
+                    <i class="fa-solid fa-truck-fast text-sm"></i> Lacak Paket / Cek Resi
+                </a>
+                <!-- Tombol WA -->
+                <a href="https://wa.me/62895402130717" target="_blank" class="bg-green-600 hover:bg-green-500 text-white text-xs font-semibold px-4 py-2.5 rounded-full flex items-center gap-2 transition">
+                    <i class="fa-brands fa-whatsapp text-base"></i> WA Admin (0895402130717)
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Content Utama Pelanggan -->
-    <main class="max-w-5xl mx-auto px-4 py-8 w-full flex-1">
+    <!-- Hero Banner -->
+    <section class="max-w-6xl mx-auto px-4 py-10 text-center">
+        <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
+            Pusat iPhone Resmi & Terpercaya Lumajang
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold mt-4 mb-3 tracking-tight">Katalog iPhone Terlengkap Lumajang</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+            Tersedia unit iBox Resmi, Inter, HDC, hingga **Koleksi iPhone Bekas Super Murah**!
+        </p>
+    </section>
 
-        <!-- Banner Pencarian Resi -->
-        <section class="text-center max-w-2xl mx-auto mb-10">
-            <span class="bg-red-500/10 text-red-400 border border-red-500/20 text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider font-extrabold mb-3 inline-block">
-                Express Delivery All Java Island 🚚
+    <!-- GALERI FOTO SUASANA TOKO FISIK -->
+    <section class="max-w-6xl mx-auto px-4 py-6 border-b border-slate-800/80 mb-8">
+        <div class="mb-6 text-center">
+            <span class="bg-green-500/10 text-green-400 border border-green-500/20 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
+                Toko Fisik &amp; Stok Real PM STORE Lumajang
             </span>
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-3 tracking-tight">Lacak Posisi Paket Anda</h2>
-            <p class="text-slate-400 text-xs sm:text-sm mb-6">Cek rute transit, posisi fisik paket, dan estimasi waktu tiba secara real-time.</p>
-            
-            <div class="flex flex-col sm:flex-row gap-2 bg-slate-900 p-2 rounded-2xl border border-red-900/40 shadow-2xl">
-                <input type="text" id="resiInput" placeholder="Masukkan No. Resi (Contoh: JNT-LMJ-001)" class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 uppercase tracking-wider font-mono font-bold">
-                <button onclick="trackPackage()" id="btnTrack" class="bg-red-600 hover:bg-red-500 text-white font-extrabold text-xs sm:text-sm px-7 py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg">
-                    <i class="fa-solid fa-magnifying-glass"></i> Lacak Paket
-                </button>
-            </div>
-            <div class="mt-3 text-left sm:text-center">
-                <span class="text-[11px] text-slate-500">Coba Contoh Resi: </span>
-                <button onclick="quickSearch('JNT-LMJ-001')" class="text-xs text-red-400 underline hover:text-red-300 font-mono font-bold mr-3">JNT-LMJ-001</button>
-                <button onclick="quickSearch('JNT-LMJ-002')" class="text-xs text-red-400 underline hover:text-red-300 font-mono font-bold">JNT-LMJ-002</button>
-            </div>
-        </section>
-
-        <!-- Loading Indicator -->
-        <div id="loadingBox" class="hidden max-w-md mx-auto text-center py-8">
-            <div class="inline-block w-8 h-8 border-4 border-red-500 border-t-transparent rounded-full animate-spin mb-3"></div>
-            <p class="text-xs text-slate-400 font-semibold">Menghubungkan ke Server Cloud Database...</p>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-store text-green-400"></i> Suasana Toko &amp; Tim Pelayanan PM STORE
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">
+                Kunjungi toko fisik kami di Pasar Senggol, Tompokersan, Lumajang. Pelayanan ramah, etalase lengkap, dan transaksi 100% aman!
+            </p>
         </div>
 
-        <!-- Informasi Error jika Resi Tidak Ditemukan -->
-        <div id="notFoundBox" class="hidden max-w-2xl mx-auto bg-red-950/40 border border-red-800/50 p-4 rounded-2xl text-center text-xs text-red-300 mb-8">
-            <i class="fa-solid fa-circle-exclamation text-xl mb-2 text-red-400"></i>
-            <p class="font-bold">Nomor resi tidak ditemukan dalam sistem online PM EXPRESS!</p>
-            <p class="text-[11px] text-slate-400 mt-1">Pastikan nomor resi yang Anda masukkan sudah benar atau hubungi Admin pengirim.</p>
-        </div>
-
-        <!-- Tampilan Hasil Pelacakan -->
-        <div id="resultContainer" class="hidden space-y-6">
-
-            <!-- Card Summary Informasi Paket -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl">
-                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Nomor Resi</span>
-                    <p id="displayResi" class="text-lg font-extrabold text-red-500 font-mono mt-0.5">-</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko1.jpg" alt="Tampak Depan PM STORE Lumajang" class="w-full h-full object-cover hover:scale-105 transition duration-300">
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl">
-                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Status Terakhir</span>
-                    <p id="displayStatus" class="text-sm font-extrabold text-emerald-400 mt-0.5">-</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl">
-                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Rute Pengiriman</span>
-                    <p id="displayRoute" class="text-xs font-bold text-slate-200 mt-1 truncate">-</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl">
-                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Sisa Jarak &amp; ETA</span>
-                    <p id="displayEta" class="text-xs font-bold text-amber-400 mt-1">-</p>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Gedung &amp; Tampak Depan Toko
                 </div>
             </div>
 
-            <!-- Grid Peta & Timeline -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <!-- Peta Interaktif Leaflet -->
-                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-4 rounded-2xl flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="font-bold text-sm text-white flex items-center gap-2">
-                            <i class="fa-solid fa-map-location-dot text-red-500"></i> Visualisasi Rute Peta
-                        </h3>
-                        <span class="text-[10px] bg-red-500/10 text-red-400 border border-red-500/20 px-2.5 py-0.5 rounded-full font-bold">Live GPS</span>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko2.jpg" alt="Etalase & Aksesoris PM STORE" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Etalase iPhone &amp; Aksesoris
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko3.jpg" alt="Tim PM STORE Lumajang" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Tim &amp; Pelayanan Ramah
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko4.jpg" alt="Suasana Transaksi PM STORE" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Suasana Transaksi Pengunjung
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter & Katalog Produk Utama -->
+    <section class="max-w-6xl mx-auto px-4 py-6">
+        <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-box-open text-blue-500"></i> Katalog iPhone Baru / Unit Utama
+            </h3>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 bg-slate-900 p-4 rounded-xl border border-slate-800 mb-8">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs text-slate-400 font-semibold mr-2">Garansi/Kondisi:</span>
+                <button onclick="filterCondition('all')" class="filter-btn active-btn bg-blue-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium">Semua</button>
+                <button onclick="filterCondition('iBox')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-1.5 rounded-lg font-medium">iBox (Resmi)</button>
+                <button onclick="filterCondition('Inter')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-1.5 rounded-lg font-medium">Inter (Internasional)</button>
+                <button onclick="filterCondition('HDC')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-1.5 rounded-lg font-medium">HDC (Replika)</button>
+            </div>
+            <div class="w-full sm:w-auto">
+                <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Cari seri iPhone..." class="w-full sm:w-64 bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+            </div>
+        </div>
+
+        <!-- Grid Produk Utama -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Data Produk di-render oleh JS -->
+        </div>
+    </section>
+
+    <!-- KATALOG KHUSUS iPHONE BEKAS -->
+    <section class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800">
+        <div class="mb-8">
+            <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
+                Obral Murah PM STORE Lumajang
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 flex items-center gap-2">
+                <i class="fa-solid fa-tags text-amber-400"></i> Katalog iPhone Bekas (Harga Terendah)
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">
+                Kondisi siap pakai, fungsi normal, harga miring! Klik gambar kecil untuk mengecek foto kemulusan dan minus unit.
+            </p>
+        </div>
+
+        <!-- Grid iPhone Bekas -->
+        <div id="usedProductGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Data iPhone Bekas di-render oleh JS -->
+        </div>
+    </section>
+
+    <!-- Informasi Pembayaran & Pengiriman -->
+    <section class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800 my-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Box Pembayaran & Cicilan -->
+            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-blue-600/20 text-blue-400 rounded-lg flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-credit-card"></i>
                     </div>
-                    <div id="map" class="w-full rounded-xl border border-slate-800"></div>
+                    <h3 class="font-bold text-lg">Metode Pembayaran &amp; Cicilan</h3>
                 </div>
+                <ul class="space-y-3 text-xs text-slate-300 leading-relaxed">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-green-400 mt-0.5"></i>
+                        <span><strong>Pembayaran Tunai (Cash):</strong> Pelunasan langsung saat pemesanan.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-green-400 mt-0.5"></i>
+                        <span><strong>Skema Cicilan:</strong> Uang Muka (DP) minimal <strong>20%</strong> dari harga asli produk.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-clock text-amber-400 mt-0.5"></i>
+                        <span><strong>Batas Pelunasan:</strong> Maksimal 1 Bulan (30 Hari) setelah DP ditransfer.</span>
+                    </li>
+                </ul>
+                <div class="mt-5 p-4 bg-slate-950 rounded-xl border border-slate-800">
+                    <p class="text-xs text-slate-400 mb-1">Rekening Pembayaran Resmi PM STORE:</p>
+                    <p class="font-bold text-white text-sm">BANK BNI - 2305366</p>
+                    <p class="text-xs text-slate-300">Atas Nama: <strong>Muh Arfanzah</strong></p>
+                </div>
+            </div>
 
-                <!-- Diagram Lini Masa / Timeline -->
-                <div class="lg:col-span-5 bg-slate-900 border border-slate-800 p-5 rounded-2xl">
-                    <h3 class="font-bold text-sm text-white mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-truck-ramp-box text-red-500"></i> Riwayat Perjalanan (Checkpoints)
-                    </h3>
-                    <div id="timelineList" class="relative pl-6 space-y-6 border-l-2 border-slate-800 my-2"></div>
+            <!-- Box Pengiriman -->
+            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-orange-600/20 text-orange-400 rounded-lg flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Opsi Ekspedisi / Pengiriman</h3>
+                </div>
+                <p class="text-xs text-slate-300 mb-3">
+                    Setiap pengiriman dibungkus secara aman dengan *bubble wrap* tebal dan garansi barang sampai ke tujuan.
+                </p>
+                <div class="mb-4">
+                    <a href="https://laoarfa-dotcom.github.io/tracking-paket/" target="_blank" class="w-full bg-red-600 hover:bg-red-500 text-white text-xs font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition shadow-md">
+                        <i class="fa-solid fa-magnifying-glass-location"></i> Cek Resi / Lacak Paket PM EXPRESS
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 text-center">
+                        <i class="fa-solid fa-box text-xl text-red-500 mb-1"></i>
+                        <h4 class="font-bold text-xs text-white">J&amp;T Reguler</h4>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 text-center">
+                        <i class="fa-solid fa-bolt text-xl text-red-500 mb-1"></i>
+                        <h4 class="font-bold text-xs text-white">J&amp;T Express</h4>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-    </main>
+    <!-- Peta Lokasi Toko & Tautan Google Maps Lumajang -->
+    <section class="max-w-6xl mx-auto px-4 py-8">
+        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                <div>
+                    <h3 class="font-bold text-lg flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-red-500"></i> Lokasi Toko Fisik (PM STORE LUMAJANG)
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-1">
+                        Pasar Senggol, tengah Jl. Iskandar Muda, Tompokersan, Kec. Lumajang, Kabupaten Lumajang, Jawa Timur.
+                    </p>
+                </div>
+                <a href="https://maps.app.goo.gl/Yt1AYRiEey1AXmAbA" target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-blue-400 border border-slate-700 text-xs font-semibold px-4 py-2.5 rounded-xl transition w-full sm:w-auto">
+                    <i class="fa-solid fa-map-location-dot text-base"></i> Buka Tautan Google Maps
+                </a>
+            </div>
+            
+            <div class="w-full h-64 rounded-xl overflow-hidden border border-slate-800">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0" 
+                    loading="lazy" 
+                    allowfullscreen 
+                    src="https://maps.google.com/maps?q=PM%20STORE%20LUMAJANG%20Pasar%20Senggol%20Tompokersan%20Lumajang&t=&z=16&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
-    <!-- MODAL POPUP ADMIN (TERSEMBUNYI) -->
-    <div id="adminModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto shadow-2xl">
-            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+    <!-- Modal Form Checkout / Beli Sekarang -->
+    <div id="buyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 w-full max-w-md rounded-2xl p-6 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
+            <h3 class="font-bold text-lg mb-1">Form Pemesanan PM STORE</h3>
+            <p id="modalProductName" class="text-xs text-blue-400 font-semibold mb-4"></p>
 
-            <!-- Tampilan Login Admin -->
-            <div id="adminLoginSection">
-                <div class="flex items-center gap-2 mb-2 text-red-500">
-                    <i class="fa-solid fa-user-shield text-2xl"></i>
-                    <h3 class="font-bold text-lg text-white">Akses Admin PM EXPRESS</h3>
-                </div>
-                <p class="text-xs text-slate-400 mb-4">Area khusus pengelola toko PM STORE Lumajang.</p>
+            <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-4">
+                <input type="hidden" id="formItemName">
                 
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-xs text-slate-300 font-medium mb-1">Password Khusus Admin:</label>
-                        <input type="password" id="adminPassInput" placeholder="Password Admin" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-red-500">
-                    </div>
-                    <button onclick="verifyAdminPass()" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs py-3 rounded-xl transition shadow-lg">
-                        Masuk Ke Dashboard Admin
-                    </button>
-                </div>
-            </div>
-
-            <!-- Tampilan Dashboard Admin -->
-            <div id="adminDashboardSection" class="hidden space-y-5">
-                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                    <div>
-                        <h3 class="font-bold text-base text-white">Dashboard Admin PM EXPRESS</h3>
-                        <p class="text-[10px] text-emerald-400">● Tersambung Cloud Database Online</p>
-                    </div>
-                    <div class="flex gap-2">
-                        <button onclick="resetDataStorage()" class="text-xs bg-red-950 hover:bg-red-900 text-red-300 border border-red-800 px-2.5 py-1 rounded-lg">Reset Default</button>
-                        <button onclick="logoutAdmin()" class="text-xs text-slate-400 hover:underline py-1">Keluar</button>
-                    </div>
-                </div>
-
-                <!-- Form Buat Resi Baru -->
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
-                    <h4 class="font-bold text-xs text-red-400 uppercase tracking-wider">+ Buat Resi Baru (Otomatis Sync ke Pembeli)</h4>
-                    <input type="text" id="newResiCode" placeholder="Kode Resi (Contoh: JNT-LMJ-003)" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 uppercase font-mono">
-                    
-                    <div class="grid grid-cols-2 gap-2">
-                        <div>
-                            <label class="block text-[10px] text-slate-400 mb-1">Kota Asal (Pengirim):</label>
-                            <select id="newOriginSelect" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs text-slate-200"></select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] text-slate-400 mb-1">Kota Tujuan Akhir:</label>
-                            <select id="newDestSelect" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs text-slate-200"></select>
-                        </div>
-                    </div>
-
-                    <button onclick="createNewResi()" id="btnCreateResi" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs py-2.5 rounded-lg transition shadow-md">
-                        + Simpan &amp; Publish Resi Ke Cloud
-                    </button>
-                </div>
-
-                <!-- Form Update Posisi Paket -->
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
-                    <h4 class="font-bold text-xs text-amber-400 uppercase tracking-wider">Update Posisi / Status Paket</h4>
-                    <select id="adminSelectResi" onchange="loadAdminResiDetails()" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs text-slate-200">
-                        <option value="">Pilih Nomor Resi...</option>
+                <div id="conditionSelectGroup">
+                    <label class="block text-xs text-slate-300 font-medium mb-1">Pilih Kondisi / Garansi:</label>
+                    <select id="formCondition" onchange="updateFormPrice()" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none">
+                        <option value="iBox">iBox (Resmi Indonesia)</option>
+                        <option value="Inter">Inter (Internasional)</option>
+                        <option value="HDC">HDC (Replika)</option>
                     </select>
-
-                    <div id="adminUpdateControl" class="hidden space-y-2 pt-2 border-t border-slate-800">
-                        <label class="block text-[11px] text-slate-400">Pilih Posisi Checkpoint Saat Ini:</label>
-                        <select id="adminSelectCheckpoint" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs text-slate-200"></select>
-                        
-                        <input type="text" id="adminStatusText" placeholder="Status Khusus (Contoh: Disortir di PM STORE Lumajang)" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs text-slate-200">
-                        
-                        <button onclick="updateResiProgress()" id="btnUpdateProgress" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs py-2.5 rounded-lg transition shadow-md">
-                            Simpan Perubahan Ke Server Online
-                        </button>
-                    </div>
                 </div>
-            </div>
 
+                <div>
+                    <label class="block text-xs text-slate-300 font-medium mb-1">Metode Pembayaran:</label>
+                    <select id="formPayment" onchange="calculateDP()" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none">
+                        <option value="Cash">Cash (Lunas)</option>
+                        <option value="Cicilan DP 20%">Cicilan (DP Minimal 20%)</option>
+                    </select>
+                </div>
+
+                <div id="dpInfoBox" class="p-3 bg-blue-950/40 border border-blue-800/50 rounded-lg text-xs text-blue-300 hidden">
+                    Rincian DP 20%: <strong id="dpAmountText">Rp 0</strong><br>
+                    Sisa Pelunasan: <strong id="remainingAmountText">Rp 0</strong> (Maks 30 Hari).
+                </div>
+
+                <div>
+                    <label class="block text-xs text-slate-300 font-medium mb-1">Pilih Ekspedisi / Kurir:</label>
+                    <select id="formExpedition" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none">
+                        <option value="J&T">J&T</option>
+                        <option value="J&T Express">J&T Express</option>
+                    </select>
+                </div>
+
+                <div class="pt-2">
+                    <p class="text-xs text-slate-400 justify-between flex">
+                        Total Harga: <strong id="formDisplayPrice" class="text-white">Rp 0</strong>
+                    </p>
+                </div>
+
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2 transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Lanjutkan Pemesanan via WhatsApp
+                </button>
+            </form>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 text-center py-5 text-xs text-slate-500">
-        &copy; 2026 PM EXPRESS - Pusat Layanan Pengiriman Pulau Jawa.<br>
-        <button onclick="openAdminModal()" class="text-[10px] text-slate-700 hover:text-slate-500 mt-2">
-            [ Kelola Sistem ]
-        </button>
+    <footer class="bg-slate-950 border-t border-slate-900 text-center py-6 text-xs text-slate-500">
+        &copy; 2026 PM STORE LUMAJANG - Muh Arfanzah. Pasar Senggol, Tompokersan, Lumajang, Jawa Timur.
     </footer>
 
-    <!-- Script Logika Cloud Sync & Maps -->
+    <!-- Script Logika Website -->
     <script>
-        // ENDPOINT CLOUD DATABASE ONLINE (GRATIS & TERDAPAT PADA CLOUD KV STORAGE)
-        const CLOUD_API_ENDPOINT = "https://kvdb.io/PM_EXPRESS_LUMAJANG_OFFICIAL_2026/tracking_packages_db";
+        // Data Produk Utama
+        const products = [
+            { id: 1, name: "iPhone 9", prices: { iBox: "Rp 2.500.000", Inter: "Rp 1.900.000", HDC: "Rp 850.000" }, rawPrices: { iBox: 2500000, Inter: 1900000, HDC: 850000 }, img: "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500" },
+            { id: 2, name: "iPhone 11", prices: { iBox: "Rp 5.200.000", Inter: "Rp 3.800.000", HDC: "Rp 1.100.000" }, rawPrices: { iBox: 5200000, Inter: 3800000, HDC: 1100000 }, img: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500" },
+            { id: 3, name: "iPhone 13 Pro", prices: { iBox: "Rp 11.500.000", Inter: "Rp 9.200.000", HDC: "Rp 1.500.000" }, rawPrices: { iBox: 11500000, Inter: 9200000, HDC: 1500000 }, img: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500" },
+            { id: 4, name: "iPhone 15 Pro", prices: { iBox: "Rp 18.200.000", Inter: "Rp 15.000.000", HDC: "Rp 1.800.000" }, rawPrices: { iBox: 18200000, Inter: 15000000, HDC: 1800000 }, img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500" },
+            { id: 5, name: "iPhone 16 Pro", prices: { iBox: "Rp 21.000.000", Inter: "Rp 17.800.000", HDC: "Rp 2.000.000" }, rawPrices: { iBox: 21000000, Inter: 17800000, HDC: 2000000 }, img: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500" },
+            { id: 6, name: "iPhone 17 Pro", prices: { iBox: "Rp 24.500.000", Inter: "Rp 20.000.000", HDC: "Rp 2.200.000" }, rawPrices: { iBox: 24500000, Inter: 20000000, HDC: 2200000 }, img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" }
+        ];
 
-        const JAVA_CITIES = {
-            "Jakarta": { lat: -6.2088, lng: 106.8456, hubName: "Gudang Utama Jakarta" },
-            "Bogor": { lat: -6.5971, lng: 106.7949, hubName: "Drop Point Bogor" },
-            "Bandung": { lat: -6.9175, lng: 107.6191, hubName: "Hub Transit Bandung" },
-            "Cirebon": { lat: -6.7320, lng: 108.5523, hubName: "Hub Transit Cirebon" },
-            "Semarang": { lat: -6.9667, lng: 110.4167, hubName: "Hub Utama Semarang" },
-            "Yogyakarta": { lat: -7.7956, lng: 110.3695, hubName: "Drop Point Jogja" },
-            "Solo": { lat: -7.5755, lng: 110.8243, hubName: "Hub Transit Solo" },
-            "Madiun": { lat: -7.6298, lng: 111.5239, hubName: "Drop Point Madiun" },
-            "Kediri": { lat: -7.8480, lng: 112.0178, hubName: "Drop Point Kediri" },
-            "Surabaya": { lat: -7.2575, lng: 112.7521, hubName: "Gudang Utama Surabaya" },
-            "Malang": { lat: -7.9666, lng: 112.6326, hubName: "Hub Transit Malang" },
-            "Probolinggo": { lat: -7.7543, lng: 113.2159, hubName: "Hub Transit Probolinggo" },
-            "Lumajang (Pusat PM STORE)": { lat: -8.1331, lng: 113.2223, hubName: "Pusat Penyortiran PM STORE Lumajang" },
-            "Jember": { lat: -8.1845, lng: 113.6681, hubName: "Drop Point Jember" },
-            "Banyuwangi": { lat: -8.2192, lng: 114.3691, hubName: "Drop Point Banyuwangi" }
-        };
-
-        const defaultPackages = {
-            "JNT-LMJ-001": {
-                resi: "JNT-LMJ-001",
-                origin: "Jakarta",
-                destination: "Jember",
-                currentCheckpointIndex: 2,
-                checkpoints: [
-                    { name: "Gudang Utama Jakarta", lat: -6.2088, lng: 106.8456, status: "Paket Di-pickup Kurir", time: "2026-07-16 08:00", completed: true },
-                    { name: "Hub Utama Semarang", lat: -6.9667, lng: 110.4167, status: "Paket Transit Jalur Pantura", time: "2026-07-16 20:30", completed: true },
-                    { name: "Pusat Penyortiran PM STORE Lumajang", lat: -8.1331, lng: 113.2223, status: "Sedang Disortir di PM STORE Lumajang", time: "2026-07-17 09:15", completed: true },
-                    { name: "Drop Point Jember", lat: -8.1845, lng: 113.6681, status: "Menunggu Pengiriman Kurir Lokal", time: "-", completed: false }
+        // Data Khusus iPhone Bekas
+        const usedProducts = [
+            {
+                id: 101,
+                name: "iPhone 9 Bekas Batangan",
+                price: "Rp 950.000",
+                rawPrice: 950000,
+                condition: "Mulus 85%",
+                minus: "Lecet halus di bezel bawah, FaceID/TouchID lancar, Battery Health 82%",
+                images: [
+                    "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500",
+                    "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=500",
+                    "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500"
                 ]
             },
-            "JNT-LMJ-002": {
-                resi: "JNT-LMJ-002",
-                origin: "Surabaya",
-                destination: "Banyuwangi",
-                currentCheckpointIndex: 1,
-                checkpoints: [
-                    { name: "Gudang Utama Surabaya", lat: -7.2575, lng: 112.7521, status: "Paket Keluar Gudang Surabaya", time: "2026-07-17 06:00", completed: true },
-                    { name: "Pusat Penyortiran PM STORE Lumajang", lat: -8.1331, lng: 113.2223, status: "Tiba di Hub PM STORE Lumajang", time: "2026-07-17 11:45", completed: true },
-                    { name: "Drop Point Banyuwangi", lat: -8.2192, lng: 114.3691, status: "Sedang Dalam Perjalanan Mobil Box", time: "-", completed: false }
+            {
+                id: 102,
+                name: "iPhone 11 Bekas Fullset",
+                price: "Rp 2.350.000",
+                rawPrice: 2350000,
+                condition: "Mulus 90%",
+                minus: "Jamur halus bekas pemakaian case, layar original TrueTone ON, BH 85%",
+                images: [
+                    "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500",
+                    "https://images.unsplash.com/photo-1574944985070-8f30c4397e3c?w=500",
+                    "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500"
+                ]
+            },
+            {
+                id: 103,
+                name: "iPhone 13 Pro Bekas",
+                price: "Rp 5.800.000",
+                rawPrice: 5800000,
+                condition: "Mulus 92%",
+                minus: "Gores kusam minim dekat port charger, kamera jernih 3x, BH 87%",
+                images: [
+                    "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500",
+                    "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
+                    "https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=500"
+                ]
+            },
+            {
+                id: 104,
+                name: "iPhone 15 Pro Bekas",
+                price: "Rp 9.200.000",
+                rawPrice: 9200000,
+                condition: "Mulus 95%",
+                minus: "Lecet mikro sudut kanan bawah, garansi aktif, BH 91%",
+                images: [
+                    "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
+                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500",
+                    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                ]
+            },
+            {
+                id: 105,
+                name: "iPhone 16 Pro Bekas",
+                price: "Rp 11.800.000",
+                rawPrice: 11800000,
+                condition: "Mulus 97% (Like New)",
+                minus: "Box kerdus agak penyok tipis saat pengiriman, unit seperti baru, BH 95%",
+                images: [
+                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500",
+                    "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500",
+                    "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500"
+                ]
+            },
+            {
+                id: 106,
+                name: "iPhone 17 Pro Bekas (Mulus Parah)",
+                price: "Rp 13.900.000",
+                rawPrice: 13900000,
+                condition: "Mulus 98%",
+                minus: "Pemakaian 1 bulan, pemakaian pribadi tanpa goresan, BH 99%",
+                images: [
+                    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500",
+                    "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500",
+                    "https://images.unsplash.com/photo-1574944985070-8f30c4397e3c?w=500"
                 ]
             }
-        };
+        ];
 
-        let map = null;
-        let mapMarkers = [];
-        let polylineLayer = null;
-        let logoClickCount = 0;
-        let logoTimer = null;
+        let selectedConditionFilter = 'all';
+        let currentProduct = null;
+        let isUsedMode = false;
 
-        // FUNGSI UNTUK MENGAMBIL DATA TERBARU DARI CLOUD ONLINE
-        async function fetchDatabaseFromCloud() {
-            try {
-                const response = await fetch(CLOUD_API_ENDPOINT);
-                if (response.ok) {
-                    const data = await response.json();
-                    localStorage.setItem('tracking_db_cloud_cache', JSON.stringify(data));
-                    return data;
-                }
-            } catch (err) {
-                console.log("Menggunakan cache lokal:", err);
-            }
-            
-            const localData = localStorage.getItem('tracking_db_cloud_cache');
-            if (localData) return JSON.parse(localData);
-            return defaultPackages;
-        }
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
 
-        // FUNGSI UNTUK MENYIMPAN DATA RESI BARU KE CLOUD SERVER ONLINE
-        async function saveDatabaseToCloud(data) {
-            localStorage.setItem('tracking_db_cloud_cache', JSON.stringify(data));
-            try {
-                await fetch(CLOUD_API_ENDPOINT, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-            } catch (err) {
-                console.error("Gagal sync ke cloud:", err);
-            }
-        }
-
-        function calculateHaversine(lat1, lon1, lat2, lon2) {
-            const R = 6371;
-            const dLat = (lat2 - lat1) * Math.PI / 180;
-            const dLon = (lon2 - lon1) * Math.PI / 180;
-            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                      Math.sin(dLon / 2) * Math.sin(dLon / 2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return Math.round(R * c);
-        }
-
-        function quickSearch(code) {
-            document.getElementById('resiInput').value = code;
-            trackPackage();
-        }
-
-        // FUNGSI UTAMA CEK RESI OLEH PEMBELI
-        async function trackPackage() {
-            const resiInput = document.getElementById('resiInput').value.trim().toUpperCase();
-            if (!resiInput) return;
-
-            const loadingBox = document.getElementById('loadingBox');
-            const notFoundBox = document.getElementById('notFoundBox');
-            const resultContainer = document.getElementById('resultContainer');
-
-            loadingBox.classList.remove('hidden');
-            notFoundBox.classList.add('hidden');
-            resultContainer.classList.add('hidden');
-
-            // Ambil data real-time dari Cloud Online
-            const db = await fetchDatabaseFromCloud();
-            loadingBox.classList.add('hidden');
-
-            const pkg = db[resiInput];
-
-            if (!pkg) {
-                notFoundBox.classList.remove('hidden');
-                return;
-            }
-
-            resultContainer.classList.remove('hidden');
-
-            const currIdx = pkg.currentCheckpointIndex;
-            const currentCp = pkg.checkpoints[currIdx];
-            const finalCp = pkg.checkpoints[pkg.checkpoints.length - 1];
-
-            document.getElementById('displayResi').innerText = pkg.resi;
-            document.getElementById('displayStatus').innerText = currentCp.status;
-            document.getElementById('displayRoute').innerText = pkg.origin + " ➔ " + pkg.destination;
-
-            const remainingKm = calculateHaversine(currentCp.lat, currentCp.lng, finalCp.lat, finalCp.lng);
-            let etaText = "";
-            if (remainingKm === 0) {
-                etaText = "Tiba di Kota Tujuan (0 km)";
-            } else {
-                const estHours = Math.ceil(remainingKm / 45);
-                etaText = remainingKm + " km (" + estHours + " Jam Est. Tiba)";
-            }
-            document.getElementById('displayEta').innerText = etaText;
-
-            renderTimelineUI(pkg);
-            renderLeafletMap(pkg);
-        }
-
-        function renderTimelineUI(pkg) {
-            const timelineList = document.getElementById('timelineList');
-            timelineList.innerHTML = '';
-
-            pkg.checkpoints.forEach((cp, index) => {
-                const isPassed = index <= pkg.currentCheckpointIndex;
-                const isCurrent = index === pkg.currentCheckpointIndex;
-
-                const item = document.createElement('div');
-                item.className = "relative flex items-start gap-3";
-
-                let dotColor = "bg-slate-800 border-slate-700 text-slate-500";
-                if (isCurrent) {
-                    dotColor = "bg-red-600 border-red-400 text-white ring-4 ring-red-500/30";
-                } else if (isPassed) {
-                    dotColor = "bg-emerald-600 border-emerald-500 text-white";
-                }
-
-                item.innerHTML = `
-                    <div class="absolute -left-[31px] top-0.5 w-6 h-6 rounded-full border-2 ${dotColor} flex items-center justify-center text-[10px] font-bold">
-                        ${isPassed ? '<i class="fa-solid fa-check"></i>' : (index + 1)}
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition";
+                card.innerHTML = `
+                    <div class="relative h-48 bg-slate-950 flex items-center justify-center overflow-hidden">
+                        <img src="${item.img}" alt="${item.name}" class="h-full w-full object-cover opacity-80 hover:scale-105 transition duration-300">
+                        <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md border border-slate-700 text-[10px] text-slate-300 font-bold px-2.5 py-1 rounded-full">
+                            Tersedia iBox / Inter / HDC
+                        </span>
                     </div>
-                    <div class="flex-1">
-                        <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-xs ${isCurrent ? 'text-red-400' : 'text-slate-200'}">${cp.name}</h4>
-                            <span class="text-[10px] text-slate-500">${cp.time}</span>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-base text-white mb-2">${item.name}</h3>
+                            <div class="space-y-1 text-xs text-slate-400 mb-4">
+                                <p class="flex justify-between"><span>Garansi iBox:</span> <strong class="text-slate-200">${item.prices.iBox}</strong></p>
+                                <p class="flex justify-between"><span>Inter:</span> <strong class="text-slate-200">${item.prices.Inter}</strong></p>
+                                <p class="flex justify-between"><span>HDC:</span> <strong class="text-slate-200">${item.prices.HDC}</strong></p>
+                            </div>
                         </div>
-                        <p class="text-[11px] text-slate-400 mt-0.5">${cp.status}</p>
+                        <button onclick="openModal(${item.id}, false)" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Beli Sekarang
+                        </button>
                     </div>
                 `;
-                timelineList.appendChild(item);
+                grid.appendChild(card);
             });
         }
 
-        function renderLeafletMap(pkg) {
-            const points = pkg.checkpoints.map(cp => [cp.lat, cp.lng]);
+        function renderUsedProducts(items) {
+            const grid = document.getElementById('usedProductGrid');
+            grid.innerHTML = '';
 
-            if (!map) {
-                map = L.map('map').setView([-7.5, 111.0], 7);
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 18,
-                    attribution: '&copy; OpenStreetMap contributors'
-                }).addTo(map);
-            }
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-900 border border-amber-900/40 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-amber-500/50 transition";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 bg-slate-950 flex items-center justify-center overflow-hidden">
+                            <img id="mainImg-${item.id}" src="${item.images[0]}" alt="${item.name}" class="h-full w-full object-cover opacity-90 transition duration-300">
+                            <span class="absolute top-3 left-3 bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full">
+                                Bekas / Second
+                            </span>
+                        </div>
 
-            mapMarkers.forEach(m => map.removeLayer(m));
-            mapMarkers = [];
-            if (polylineLayer) map.removeLayer(polylineLayer);
+                        <div class="p-3 bg-slate-950 flex items-center justify-between gap-2 border-b border-slate-800">
+                            <span class="text-[10px] text-slate-400 font-semibold">Foto Unit (3 Gambar):</span>
+                            <div class="flex gap-2">
+                                <img src="${item.images[0]}" onclick="switchImage(${item.id}, '${item.images[0]}')" class="w-10 h-10 object-cover rounded-md border border-amber-500/50 cursor-pointer hover:opacity-80">
+                                <img src="${item.images[1]}" onclick="switchImage(${item.id}, '${item.images[1]}')" class="w-10 h-10 object-cover rounded-md border border-slate-700 cursor-pointer hover:opacity-80">
+                                <img src="${item.images[2]}" onclick="switchImage(${item.id}, '${item.images[2]}')" class="w-10 h-10 object-cover rounded-md border border-slate-700 cursor-pointer hover:opacity-80">
+                            </div>
+                        </div>
 
-            pkg.checkpoints.forEach((cp, index) => {
-                const isCurrent = index === pkg.currentCheckpointIndex;
-                const marker = L.marker([cp.lat, cp.lng]).addTo(map);
-                
-                let popupContent = `<b style="color:#dc2626;">${cp.name}</b><br><span style="font-size:11px;">Status: ${cp.status}</span>`;
-                if (isCurrent) popupContent += `<br><b style="color:#059669;">[Posisi Paket Saat Ini]</b>`;
-                
-                marker.bindPopup(popupContent);
-                if (isCurrent) marker.openPopup();
-                
-                mapMarkers.push(marker);
+                        <div class="p-5">
+                            <h4 class="font-bold text-base text-white mb-1">${item.name}</h4>
+                            <p class="text-xl font-extrabold text-amber-400 mb-3">${item.price}</p>
+                            
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs space-y-1.5 mb-4">
+                                <p class="text-slate-300"><strong>Kemulusan:</strong> <span class="text-green-400 font-semibold">${item.condition}</span></p>
+                                <p class="text-slate-400 text-[11px] leading-relaxed"><strong>Detail / Minus:</strong> ${item.minus}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-0">
+                        <button onclick="openModal(${item.id}, true)" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Beli Unit Bekas (Rp ${item.price})
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
             });
-
-            polylineLayer = L.polyline(points, { color: '#dc2626', weight: 4, opacity: 0.85, dashArray: '6, 8' }).addTo(map);
-            map.fitBounds(polylineLayer.getBounds(), { padding: [40, 40] });
         }
 
-        // AKTIFAKAN FITUR RAHASIA 3X KLIK LOGO
-        function handleLogoTripleClick() {
-            logoClickCount++;
-            clearTimeout(logoTimer);
-            logoTimer = setTimeout(() => { logoClickCount = 0; }, 1000);
-
-            if (logoClickCount >= 3) {
-                logoClickCount = 0;
-                openAdminModal();
+        function switchImage(productId, newUrl) {
+            const imgElem = document.getElementById(`mainImg-${productId}`);
+            if (imgElem) {
+                imgElem.src = newUrl;
             }
         }
 
-        function openAdminModal() {
-            document.getElementById('adminModal').classList.remove('hidden');
-            populateCityDropdowns();
+        function filterCondition(type) {
+            selectedConditionFilter = type;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
+            event.target.classList.add('bg-blue-600', 'text-white');
+            searchProduct();
         }
 
-        function closeAdminModal() {
-            document.getElementById('adminModal').classList.add('hidden');
+        function searchProduct() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+            renderProducts(filtered);
         }
 
-        function verifyAdminPass() {
-            const pass = document.getElementById('adminPassInput').value;
-            if (pass === 'pmstore2026' || pass === 'admin123') {
-                document.getElementById('adminLoginSection').classList.add('hidden');
-                document.getElementById('adminDashboardSection').classList.remove('hidden');
-                populateAdminResiList();
+        function openModal(productId, isUsed = false) {
+            isUsedMode = isUsed;
+            const condGroup = document.getElementById('conditionSelectGroup');
+
+            if (isUsed) {
+                currentProduct = usedProducts.find(p => p.id === productId);
+                document.getElementById('formItemName').value = currentProduct.name;
+                document.getElementById('modalProductName').innerText = "Pilihan Seri: " + currentProduct.name + " (" + currentProduct.condition + ")";
+                document.getElementById('formDisplayPrice').innerText = currentProduct.price;
+                condGroup.classList.add('hidden');
             } else {
-                alert('Password Admin Salah!');
+                currentProduct = products.find(p => p.id === productId);
+                document.getElementById('formItemName').value = currentProduct.name;
+                document.getElementById('modalProductName').innerText = "Pilihan Seri: " + currentProduct.name;
+                condGroup.classList.remove('hidden');
+                updateFormPrice();
+            }
+
+            calculateDP();
+            document.getElementById('buyModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('buyModal').classList.add('hidden');
+        }
+
+        function updateFormPrice() {
+            if (isUsedMode) return;
+            const condition = document.getElementById('formCondition').value;
+            const priceText = currentProduct.prices[condition];
+            document.getElementById('formDisplayPrice').innerText = priceText;
+            calculateDP();
+        }
+
+        function calculateDP() {
+            const paymentType = document.getElementById('formPayment').value;
+            const dpBox = document.getElementById('dpInfoBox');
+            let rawPrice = 0;
+
+            if (isUsedMode) {
+                rawPrice = currentProduct.rawPrice;
+            } else {
+                const condition = document.getElementById('formCondition').value;
+                rawPrice = currentProduct.rawPrices[condition];
+            }
+
+            if (paymentType === 'Cicilan DP 20%') {
+                const dp = rawPrice * 0.20;
+                const remaining = rawPrice - dp;
+                document.getElementById('dpAmountText').innerText = "Rp " + dp.toLocaleString('id-ID');
+                document.getElementById('remainingAmountText').innerText = "Rp " + remaining.toLocaleString('id-ID');
+                dpBox.classList.remove('hidden');
+            } else {
+                dpBox.classList.add('hidden');
             }
         }
 
-        function logoutAdmin() {
-            document.getElementById('adminLoginSection').classList.remove('hidden');
-            document.getElementById('adminDashboardSection').classList.add('hidden');
-        }
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            const productName = currentProduct.name;
+            const payment = document.getElementById('formPayment').value;
+            const expedition = document.getElementById('formExpedition').value;
+            let message = "";
 
-        function populateCityDropdowns() {
-            const originSel = document.getElementById('newOriginSelect');
-            const destSel = document.getElementById('newDestSelect');
-            originSel.innerHTML = '';
-            destSel.innerHTML = '';
-
-            Object.keys(JAVA_CITIES).forEach(city => {
-                originSel.innerHTML += `<option value="${city}">${city}</option>`;
-                destSel.innerHTML += `<option value="${city}">${city}</option>`;
-            });
-            originSel.value = "Jakarta";
-            destSel.value = "Jember";
-        }
-
-        async function populateAdminResiList() {
-            const db = await fetchDatabaseFromCloud();
-            const select = document.getElementById('adminSelectResi');
-            select.innerHTML = '<option value="">Pilih Nomor Resi...</option>';
-            Object.keys(db).forEach(code => {
-                select.innerHTML += `<option value="${code}">${code} (${db[code].origin} ➔ ${db[code].destination})</option>`;
-            });
-        }
-
-        async function createNewResi() {
-            const code = document.getElementById('newResiCode').value.trim().toUpperCase();
-            const originCity = document.getElementById('newOriginSelect').value;
-            const destCity = document.getElementById('newDestSelect').value;
-
-            if (!code) {
-                alert('Mohon masukkan Kode Resi!');
-                return;
+            if (isUsedMode) {
+                const priceText = currentProduct.price;
+                const minusNote = currentProduct.minus;
+                message = `Halo Admin, saya mau beli unit bekas ${productName}. Harga: ${priceText}. Condition/Minus: (${minusNote}). Metode Pembayaran: ${payment}. Ekspedisi: ${expedition}.`;
+            } else {
+                const condition = document.getElementById('formCondition').value;
+                const priceText = currentProduct.prices[condition];
+                message = `Halo Admin, saya mau beli ${productName} dengan kondisi ${condition}. Harga: ${priceText}. Metode Pembayaran: ${payment}. Ekspedisi: ${expedition}.`;
             }
-
-            const btn = document.getElementById('btnCreateResi');
-            btn.innerText = "Mengunggah Ke Server Online...";
-            btn.disabled = true;
-
-            const originData = JAVA_CITIES[originCity];
-            const destData = JAVA_CITIES[destCity];
-            const lmjData = JAVA_CITIES["Lumajang (Pusat PM STORE)"];
-
-            const db = await fetchDatabaseFromCloud();
-            db[code] = {
-                resi: code,
-                origin: originCity,
-                destination: destCity,
-                currentCheckpointIndex: 0,
-                checkpoints: [
-                    { name: originData.hubName, lat: originData.lat, lng: originData.lng, status: "Paket Diproses di Kota Asal", time: new Date().toISOString().slice(0,16).replace('T',' '), completed: true },
-                    { name: "Pusat Penyortiran PM STORE Lumajang", lat: lmjData.lat, lng: lmjData.lng, status: "Sedang Transmisi Penyortiran di Lumajang", time: "-", completed: false },
-                    { name: destData.hubName, lat: destData.lat, lng: destData.lng, status: "Tiba di Kota Tujuan Akhir", time: "-", completed: false }
-                ]
-            };
-
-            await saveDatabaseToCloud(db);
             
-            btn.innerText = "+ Simpan & Publish Resi Ke Cloud";
-            btn.disabled = false;
-
-            alert('BERHASIL! Resi ' + code + ' sudah di-publish ke Server Online. Pembeli di HP mana pun bisa langsung melacaknya sekarang!');
-            populateAdminResiList();
+            const waNumber = "62895402130717";
+            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(waUrl, '_blank');
         }
 
-        async function loadAdminResiDetails() {
-            const code = document.getElementById('adminSelectResi').value;
-            const controlBox = document.getElementById('adminUpdateControl');
-            if (!code) {
-                controlBox.classList.add('hidden');
-                return;
-            }
-
-            const db = await fetchDatabaseFromCloud();
-            const pkg = db[code];
-            const cpSelect = document.getElementById('adminSelectCheckpoint');
-            cpSelect.innerHTML = '';
-
-            pkg.checkpoints.forEach((cp, i) => {
-                cpSelect.innerHTML += `<option value="${i}" ${i === pkg.currentCheckpointIndex ? 'selected' : ''}>${i + 1}. ${cp.name}</option>`;
-            });
-
-            controlBox.classList.remove('hidden');
-        }
-
-        async function updateResiProgress() {
-            const code = document.getElementById('adminSelectResi').value;
-            const cpIndex = parseInt(document.getElementById('adminSelectCheckpoint').value);
-            const customStatus = document.getElementById('adminStatusText').value.trim();
-
-            const btn = document.getElementById('btnUpdateProgress');
-            btn.innerText = "Memperbarui Server Online...";
-            btn.disabled = true;
-
-            const db = await fetchDatabaseFromCloud();
-            db[code].currentCheckpointIndex = cpIndex;
-            db[code].checkpoints[cpIndex].time = new Date().toISOString().slice(0,16).replace('T',' ');
-            if (customStatus) {
-                db[code].checkpoints[cpIndex].status = customStatus;
-            }
-
-            await saveDatabaseToCloud(db);
-
-            btn.innerText = "Simpan Perubahan Ke Server Online";
-            btn.disabled = false;
-
-            alert('BERHASIL! Status & Lokasi Resi ' + code + ' sudah di-update di Server Online!');
-            quickSearch(code);
-            closeAdminModal();
-        }
-
-        async function resetDataStorage() {
-            if (confirm("Reset seluruh database online ke setelan awal?")) {
-                await saveDatabaseToCloud(defaultPackages);
-                alert("Database Online Berhasil Di-reset!");
-                location.reload();
-            }
-        }
-
-        // Jalankan pencarian default saat website pertama dibuka
-        quickSearch('JNT-LMJ-001');
+        // Render Awal Seluruh Katalog
+        renderProducts(products);
+        renderUsedProducts(usedProducts);
     </script>
 </body>
 </html>
