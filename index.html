@@ -38,12 +38,71 @@
         </span>
         <h2 class="text-3xl sm:text-5xl font-extrabold mt-4 mb-3 tracking-tight">Katalog iPhone Terlengkap Makassar</h2>
         <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
-            Tersedia unit iBox Resmi, Inter, hingga HDC. Melayani Pembayaran Cash &amp; Skema Cicilan DP Mulai 20%!
+            Tersedia unit iBox Resmi, Inter, HDC, hingga **Koleksi iPhone Bekas Super Murah**!
         </p>
     </section>
 
-    <!-- Filter & Katalog Produk -->
+    <!-- GALERI FOTO SUASANA TOKO FISIK -->
+    <section class="max-w-6xl mx-auto px-4 py-6 border-b border-slate-800/80 mb-8">
+        <div class="mb-6 text-center">
+            <span class="bg-green-500/10 text-green-400 border border-green-500/20 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
+                Toko Fisik &amp; Stok Real
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-store text-green-400"></i> Suasana Toko &amp; Tim Pelayanan Kami
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">
+                Kunjungi toko fisik kami di Ujung Tanah, Makassar. Pelayanan ramah, etalase lengkap, dan transaksi 100% aman!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko1.jpg" alt="Tampak Depan Toko" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Gedung &amp; Tampak Depan Toko
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko2.jpg" alt="Etalase & Aksesoris" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Etalase iPhone &amp; Aksesoris
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko3.jpg" alt="Tim Toko" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Tim &amp; Pelayanan Ramah
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 overflow-hidden bg-slate-950">
+                    <img src="toko4.jpg" alt="Suasana Toko Ramai" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-3 text-center text-xs text-slate-300 font-semibold border-t border-slate-800/60">
+                    Suasana Transaksi Pengunjung
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter & Katalog Produk Baru / Utama -->
     <section class="max-w-6xl mx-auto px-4 py-6">
+        <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-box-open text-blue-500"></i> Katalog iPhone Baru / Unit Utama
+            </h3>
+        </div>
+
         <!-- Filter Bar -->
         <div class="flex flex-wrap items-center justify-between gap-4 bg-slate-900 p-4 rounded-xl border border-slate-800 mb-8">
             <div class="flex flex-wrap items-center gap-2">
@@ -58,9 +117,29 @@
             </div>
         </div>
 
-        <!-- Grid Produk -->
+        <!-- Grid Produk Utama -->
         <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Data Produk di-render oleh JavaScript -->
+            <!-- Data Produk di-render oleh JS -->
+        </div>
+    </section>
+
+    <!-- KATALOG KHUSUS iPHONE BEKAS -->
+    <section class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800">
+        <div class="mb-8">
+            <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
+                Obral Murah Meriah
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 flex items-center gap-2">
+                <i class="fa-solid fa-tags text-amber-400"></i> Katalog iPhone Bekas (Harga Terendah)
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">
+                Kondisi siap pakai, fungsi normal, harga miring! Klik gambar kecil untuk mengecek foto kemulusan dan minus unit.
+            </p>
+        </div>
+
+        <!-- Grid iPhone Bekas -->
+        <div id="usedProductGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Data iPhone Bekas di-render oleh JS -->
         </div>
     </section>
 
@@ -155,7 +234,7 @@
             <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-4">
                 <input type="hidden" id="formItemName">
                 
-                <div>
+                <div id="conditionSelectGroup">
                     <label class="block text-xs text-slate-300 font-medium mb-1">Pilih Kondisi / Garansi:</label>
                     <select id="formCondition" onchange="updateFormPrice()" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none">
                         <option value="iBox">iBox (Resmi Indonesia)</option>
@@ -187,7 +266,7 @@
 
                 <div class="pt-2">
                     <p class="text-xs text-slate-400 justify-between flex">
-                        Total Harga Asli: <strong id="formDisplayPrice" class="text-white">Rp 0</strong>
+                        Total Harga: <strong id="formDisplayPrice" class="text-white">Rp 0</strong>
                     </p>
                 </div>
 
@@ -205,18 +284,101 @@
 
     <!-- Script Logika Website -->
     <script>
-        // Data Produk dari iPhone 9 hingga iPhone 17 Pro
+        // Data Produk Utama (Baru/iBox/Inter/HDC)
         const products = [
-            { id: 1, name: "iPhone 9", prices: { iBox: "Rp 2.500.000", Inter: "Rp 1.900.000", HDC: "Rp 850.000" }, rawPrices: { iBox: 2500000, Inter: 1900000, HDC: 850000 }, img: "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=400" },
-            { id: 2, name: "iPhone 11", prices: { iBox: "Rp 5.200.000", Inter: "Rp 3.800.000", HDC: "Rp 1.100.000" }, rawPrices: { iBox: 5200000, Inter: 3800000, HDC: 1100000 }, img: "https://images.unsplash.com/photo-1574944985070-8f30c4397e3c?w=400" },
-            { id: 3, name: "iPhone 13 Pro", prices: { iBox: "Rp 11.500.000", Inter: "Rp 9.200.000", HDC: "Rp 1.500.000" }, rawPrices: { iBox: 11500000, Inter: 9200000, HDC: 1500000 }, img: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=400" },
-            { id: 4, name: "iPhone 15 Pro", prices: { iBox: "Rp 18.200.000", Inter: "Rp 15.000.000", HDC: "Rp 1.800.000" }, rawPrices: { iBox: 18200000, Inter: 15000000, HDC: 1800000 }, img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400" },
-            { id: 5, name: "iPhone 16 Pro", prices: { iBox: "Rp 21.000.000", Inter: "Rp 17.800.000", HDC: "Rp 2.000.000" }, rawPrices: { iBox: 21000000, Inter: 17800000, HDC: 2000000 }, img: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400" },
-            { id: 6, name: "iPhone 17 Pro", prices: { iBox: "Rp 24.500.000", Inter: "Rp 20.000.000", HDC: "Rp 2.200.000" }, rawPrices: { iBox: 24500000, Inter: 20000000, HDC: 2200000 }, img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" }
+            { id: 1, name: "iPhone 9", prices: { iBox: "Rp 2.500.000", Inter: "Rp 1.900.000", HDC: "Rp 850.000" }, rawPrices: { iBox: 2500000, Inter: 1900000, HDC: 850000 }, img: "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500" },
+            { id: 2, name: "iPhone 11", prices: { iBox: "Rp 5.200.000", Inter: "Rp 3.800.000", HDC: "Rp 1.100.000" }, rawPrices: { iBox: 5200000, Inter: 3800000, HDC: 1100000 }, img: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500" },
+            { id: 3, name: "iPhone 13 Pro", prices: { iBox: "Rp 11.500.000", Inter: "Rp 9.200.000", HDC: "Rp 1.500.000" }, rawPrices: { iBox: 11500000, Inter: 9200000, HDC: 1500000 }, img: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500" },
+            { id: 4, name: "iPhone 15 Pro", prices: { iBox: "Rp 18.200.000", Inter: "Rp 15.000.000", HDC: "Rp 1.800.000" }, rawPrices: { iBox: 18200000, Inter: 15000000, HDC: 1800000 }, img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500" },
+            { id: 5, name: "iPhone 16 Pro", prices: { iBox: "Rp 21.000.000", Inter: "Rp 17.800.000", HDC: "Rp 2.000.000" }, rawPrices: { iBox: 21000000, Inter: 17800000, HDC: 2000000 }, img: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500" },
+            { id: 6, name: "iPhone 17 Pro", prices: { iBox: "Rp 24.500.000", Inter: "Rp 20.000.000", HDC: "Rp 2.200.000" }, rawPrices: { iBox: 24500000, Inter: 20000000, HDC: 2200000 }, img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" }
+        ];
+
+        // Data Khusus iPhone Bekas
+        const usedProducts = [
+            {
+                id: 101,
+                name: "iPhone 9 Bekas Batangan",
+                price: "Rp 950.000",
+                rawPrice: 950000,
+                condition: "Mulus 85%",
+                minus: "Lecet halus di bezel bawah, FaceID/TouchID lancar, Battery Health 82%",
+                images: [
+                    "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500",
+                    "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=500",
+                    "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500"
+                ]
+            },
+            {
+                id: 102,
+                name: "iPhone 11 Bekas Fullset",
+                price: "Rp 2.350.000",
+                rawPrice: 2350000,
+                condition: "Mulus 90%",
+                minus: "Jamur halus bekas pemakaian case, layar original TrueTone ON, BH 85%",
+                images: [
+                    "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500",
+                    "https://images.unsplash.com/photo-1574944985070-8f30c4397e3c?w=500",
+                    "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500"
+                ]
+            },
+            {
+                id: 103,
+                name: "iPhone 13 Pro Bekas",
+                price: "Rp 5.800.000",
+                rawPrice: 5800000,
+                condition: "Mulus 92%",
+                minus: "Gores kusam minim dekat port charger, kamera jernih 3x, BH 87%",
+                images: [
+                    "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500",
+                    "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
+                    "https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=500"
+                ]
+            },
+            {
+                id: 104,
+                name: "iPhone 15 Pro Bekas",
+                price: "Rp 9.200.000",
+                rawPrice: 9200000,
+                condition: "Mulus 95%",
+                minus: "Lecet mikro sudut kanan bawah, garansi aktif, BH 91%",
+                images: [
+                    "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
+                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500",
+                    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                ]
+            },
+            {
+                id: 105,
+                name: "iPhone 16 Pro Bekas",
+                price: "Rp 11.800.000",
+                rawPrice: 11800000,
+                condition: "Mulus 97% (Like New)",
+                minus: "Box kerdus agak penyok tipis saat pengiriman, unit seperti baru, BH 95%",
+                images: [
+                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500",
+                    "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500",
+                    "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500"
+                ]
+            },
+            {
+                id: 106,
+                name: "iPhone 17 Pro Bekas (Mulus Parah)",
+                price: "Rp 13.900.000",
+                rawPrice: 13900000,
+                condition: "Mulus 98%",
+                minus: "Pemakaian 1 bulan, pemakaian pribadi tanpa goresan, BH 99%",
+                images: [
+                    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500",
+                    "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500",
+                    "https://images.unsplash.com/photo-1574944985070-8f30c4397e3c?w=500"
+                ]
+            }
         ];
 
         let selectedConditionFilter = 'all';
         let currentProduct = null;
+        let isUsedMode = false;
 
         function renderProducts(items) {
             const grid = document.getElementById('productGrid');
@@ -241,13 +403,67 @@
                                 <p class="flex justify-between"><span>HDC:</span> <strong class="text-slate-200">${item.prices.HDC}</strong></p>
                             </div>
                         </div>
-                        <button onclick="openModal(${item.id})" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <button onclick="openModal(${item.id}, false)" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-cart-shopping"></i> Beli Sekarang
                         </button>
                     </div>
                 `;
                 grid.appendChild(card);
             });
+        }
+
+        function renderUsedProducts(items) {
+            const grid = document.getElementById('usedProductGrid');
+            grid.innerHTML = '';
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-900 border border-amber-900/40 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-amber-500/50 transition";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 bg-slate-950 flex items-center justify-center overflow-hidden">
+                            <img id="mainImg-${item.id}" src="${item.images[0]}" alt="${item.name}" class="h-full w-full object-cover opacity-90 transition duration-300">
+                            <span class="absolute top-3 left-3 bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full">
+                                Bekas / Second
+                            </span>
+                        </div>
+
+                        <div class="p-3 bg-slate-950 flex items-center justify-between gap-2 border-b border-slate-800">
+                            <span class="text-[10px] text-slate-400 font-semibold">Foto Unit (3 Gambar):</span>
+                            <div class="flex gap-2">
+                                <img src="${item.images[0]}" onclick="switchImage(${item.id}, '${item.images[0]}')" class="w-10 h-10 object-cover rounded-md border border-amber-500/50 cursor-pointer hover:opacity-80">
+                                <img src="${item.images[1]}" onclick="switchImage(${item.id}, '${item.images[1]}')" class="w-10 h-10 object-cover rounded-md border border-slate-700 cursor-pointer hover:opacity-80">
+                                <img src="${item.images[2]}" onclick="switchImage(${item.id}, '${item.images[2]}')" class="w-10 h-10 object-cover rounded-md border border-slate-700 cursor-pointer hover:opacity-80">
+                            </div>
+                        </div>
+
+                        <div class="p-5">
+                            <h4 class="font-bold text-base text-white mb-1">${item.name}</h4>
+                            <p class="text-xl font-extrabold text-amber-400 mb-3">${item.price}</p>
+                            
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs space-y-1.5 mb-4">
+                                <p class="text-slate-300"><strong>Kemulusan:</strong> <span class="text-green-400 font-semibold">${item.condition}</span></p>
+                                <p class="text-slate-400 text-[11px] leading-relaxed"><strong>Detail / Minus:</strong> ${item.minus}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-0">
+                        <button onclick="openModal(${item.id}, true)" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i> Beli Unit Bekas (Rp ${item.price})
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function switchImage(productId, newUrl) {
+            const imgElem = document.getElementById(`mainImg-${productId}`);
+            if (imgElem) {
+                imgElem.src = newUrl;
+            }
         }
 
         function filterCondition(type) {
@@ -263,11 +479,25 @@
             renderProducts(filtered);
         }
 
-        function openModal(productId) {
-            currentProduct = products.find(p => p.id === productId);
-            document.getElementById('formItemName').value = currentProduct.name;
-            document.getElementById('modalProductName').innerText = "Pilihan Seri: " + currentProduct.name;
-            updateFormPrice();
+        function openModal(productId, isUsed = false) {
+            isUsedMode = isUsed;
+            const condGroup = document.getElementById('conditionSelectGroup');
+
+            if (isUsed) {
+                currentProduct = usedProducts.find(p => p.id === productId);
+                document.getElementById('formItemName').value = currentProduct.name;
+                document.getElementById('modalProductName').innerText = "Pilihan Seri: " + currentProduct.name + " (" + currentProduct.condition + ")";
+                document.getElementById('formDisplayPrice').innerText = currentProduct.price;
+                condGroup.classList.add('hidden');
+            } else {
+                currentProduct = products.find(p => p.id === productId);
+                document.getElementById('formItemName').value = currentProduct.name;
+                document.getElementById('modalProductName').innerText = "Pilihan Seri: " + currentProduct.name;
+                condGroup.classList.remove('hidden');
+                updateFormPrice();
+            }
+
+            calculateDP();
             document.getElementById('buyModal').classList.remove('hidden');
         }
 
@@ -276,6 +506,7 @@
         }
 
         function updateFormPrice() {
+            if (isUsedMode) return;
             const condition = document.getElementById('formCondition').value;
             const priceText = currentProduct.prices[condition];
             document.getElementById('formDisplayPrice').innerText = priceText;
@@ -284,9 +515,15 @@
 
         function calculateDP() {
             const paymentType = document.getElementById('formPayment').value;
-            const condition = document.getElementById('formCondition').value;
-            const rawPrice = currentProduct.rawPrices[condition];
             const dpBox = document.getElementById('dpInfoBox');
+            let rawPrice = 0;
+
+            if (isUsedMode) {
+                rawPrice = currentProduct.rawPrice;
+            } else {
+                const condition = document.getElementById('formCondition').value;
+                rawPrice = currentProduct.rawPrices[condition];
+            }
 
             if (paymentType === 'Cicilan DP 20%') {
                 const dp = rawPrice * 0.20;
@@ -302,13 +539,19 @@
         function handleOrderSubmit(e) {
             e.preventDefault();
             const productName = currentProduct.name;
-            const condition = document.getElementById('formCondition').value;
-            const priceText = currentProduct.prices[condition];
             const payment = document.getElementById('formPayment').value;
             const expedition = document.getElementById('formExpedition').value;
+            let message = "";
 
-            // Format Pesan Sesuai Brief
-            const message = `Halo Admin, saya mau beli ${productName} dengan kondisi ${condition}. Harga: ${priceText}. Metode Pembayaran: ${payment}. Ekspedisi: ${expedition}.`;
+            if (isUsedMode) {
+                const priceText = currentProduct.price;
+                const minusNote = currentProduct.minus;
+                message = `Halo Admin, saya mau beli unit bekas ${productName}. Harga: ${priceText}. Condition/Minus: (${minusNote}). Metode Pembayaran: ${payment}. Ekspedisi: ${expedition}.`;
+            } else {
+                const condition = document.getElementById('formCondition').value;
+                const priceText = currentProduct.prices[condition];
+                message = `Halo Admin, saya mau beli ${productName} dengan kondisi ${condition}. Harga: ${priceText}. Metode Pembayaran: ${payment}. Ekspedisi: ${expedition}.`;
+            }
             
             const waNumber = "62895402130717";
             const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
@@ -316,8 +559,9 @@
             window.open(waUrl, '_blank');
         }
 
-        // Render Awal
+        // Render Awal Seluruh Katalog
         renderProducts(products);
+        renderUsedProducts(usedProducts);
     </script>
 </body>
-    </html>
+</html>
